@@ -4,7 +4,7 @@
   "description": "A small local web app for logging dice rolls during a game and seeing, in real time, how far your actual rolls deviate from what probability says *should* happen.",
   "main": "index.js",
   "scripts": {
-    "test": "tsx --test \"src/**/*.test.ts\"",
+    "test": "vitest run",
     "dev": "tsx watch src/server.ts",
     "build:client": "tsc --project tsconfig.client.json",
     "typecheck": "tsc --noEmit && tsc --project tsconfig.client.json --noEmit"
@@ -30,6 +30,7 @@
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.11",
     "tsx": "^4.23.15",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.2"
   }
 }

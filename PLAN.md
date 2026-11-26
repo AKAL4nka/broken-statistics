@@ -43,10 +43,10 @@ math, no Express, no web. This is the most interesting code — take your time h
 
 Work in `src/stats.ts`. Export these functions:
 
-- [ ] `possibleSums(numDice: number, sides: number): number[]`
+- [x] `possibleSums(numDice: number, sides: number): number[]`
   Returns every reachable sum, from `numDice` (all ones) to `numDice * sides`.
 
-- [ ] `waysToMakeSums(numDice: number, sides: number): Map<number, number>`
+- [x] `waysToMakeSums(numDice: number, sides: number): Map<number, number>`
   The core algorithm. For each possible sum, how many distinct dice combinations
   produce it. **Build it one die at a time** (this is a convolution):
   - Start with 1 die: `1 → 1, 2 → 1, ..., sides → 1`.
@@ -54,13 +54,13 @@ Work in `src/stats.ts`. Export these functions:
   - Repeat until you've added all `numDice` dice.
   - Sanity check: the counts must sum to `sides ** numDice`.
 
-- [ ] `expectedProbabilities(numDice: number, sides: number): Map<number, number>`
+- [x] `expectedProbabilities(numDice: number, sides: number): Map<number, number>`
   Each sum's ways divided by the total number of outcomes (`sides ** numDice`).
 
-- [ ] Verify by hand: for `numDice=2, sides=6`, you must get the classic
+- [x] Verify by hand: for `numDice=2, sides=6`, you must get the classic
   `2→1, 3→2, ..., 7→6, ..., 12→1` out of 36.
 
-- [ ] Write `src/stats.test.ts` using `node:test` and `node:assert` that checks the 2d6
+- [x] Write `src/stats.test.ts` using `node:test` and `node:assert` that checks the 2d6
   table, and run it with `npm test`.
 
 - [ ] **Commit:** `feat: dice distribution engine`.
