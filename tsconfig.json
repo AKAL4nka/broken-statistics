@@ -12,7 +12,6 @@
     "moduleResolution": "nodenext",
     "outDir": "./dist",
     "rootDir": "./src",
-    "exclude": ["src/client"],
     "types": [],
     // For nodejs:
     // "lib": ["esnext"],
@@ -44,5 +43,6 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+  },
+  "exclude": ["src/client"]
 }

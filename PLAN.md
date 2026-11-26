@@ -25,12 +25,12 @@ Goal: an empty but version-controlled project you can run.
   `src/client`.
 - [x] Create a second `tsconfig.client.json` for the browser code: `"module": "ES2022"`,
   `"lib": ["DOM", "ES2022"]`, `"rootDir": "src/client"`, `"outDir": "public"`.
-- [ ] Add npm scripts: `dev` (`tsx watch src/server.ts`), `build:client`
+- [x] Add npm scripts: `dev` (`tsx watch src/server.ts`), `build:client`
   (`tsc -p tsconfig.client.json`), `test` (`tsx --test "src/**/*.test.ts"`), and `typecheck`
   (`tsc --noEmit && tsc -p tsconfig.client.json --noEmit`).
-- [ ] Create empty files: `src/server.ts`, `src/stats.ts`, `src/storage.ts`,
+- [x] Create empty files: `src/server.ts`, `src/stats.ts`, `src/storage.ts`,
   `src/client/app.ts`, `public/index.html`.
-- [ ] **Commit:** `chore: project scaffold`.
+- [x] **Commit:** `chore: project scaffold`.
 
 **Definition of done:** `npm run typecheck` passes; `git log` shows the scaffold commit.
 
