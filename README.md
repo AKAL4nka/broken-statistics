@@ -58,13 +58,14 @@ The web framework and chart library are off-the-shelf, but the core logic is han
 
 ## Tech stack
 
-- **Python 3** + **Flask** for the local web server and JSON API.
-- **SQLite** (standard library) for persistence.
-- **Vanilla HTML/JS** for the UI, with **Chart.js** for the bar chart.
+- **TypeScript** on **Node.js** + **Express** for the local web server and JSON API.
+- **SQLite** via `better-sqlite3` for persistence.
+- **Vanilla HTML + TypeScript** for the UI, with **Chart.js** for the bar chart.
+- `tsx` to run TypeScript directly, and `node:test` for tests.
 
 ## Requirements
 
-- Python 3.10 or newer.
+- Node.js 22 or newer.
 
 ## Clone and run
 
@@ -73,18 +74,18 @@ The web framework and chart library are off-the-shelf, but the core logic is han
 git clone <your-repo-url> dice-stats
 cd dice-stats
 
-# 2. (Recommended) create and activate a virtual environment
-python3 -m venv .venv
-source .venv/bin/activate        # on Windows: .venv\Scripts\activate
+# 2. Install dependencies
+npm install
 
-# 3. Install dependencies
-pip install -r requirements.txt
+# 3. Build the browser code and start the server
+npm run build:client
+npm run dev
 
-# 4. Run
-python app.py
+# 4. Open the app
+# Visit http://localhost:3000 in your browser
 
-# 5. Open the app
-# Visit http://localhost:5000 in your browser
+# Run the tests
+npm test
 ```
 
 ## How to use it
@@ -99,13 +100,19 @@ python app.py
 
 ```
 dice-stats/
-├── app.py            # Flask routes — the web/API layer
-├── stats.py          # Distribution engine + deviation + chi-squared (the core math)
-├── storage.py        # Persistence: save/load rolls and sessions (SQLite)
-├── static/
-│   ├── index.html    # UI: dice config, roll buttons, results
-│   └── app.js        # fetch calls + rendering
-├── requirements.txt
+├── src/
+│   ├── server.ts       # Express routes — the web/API layer
+│   ├── stats.ts        # Distribution engine + deviation + chi-squared (the core math)
+│   ├── storage.ts      # Persistence: save/load rolls and sessions (SQLite)
+│   ├── *.test.ts       # Tests (node:test)
+│   └── client/
+│       └── app.ts      # Browser code: fetch calls + rendering
+├── public/
+│   ├── index.html      # UI: dice config, roll buttons, results
+│   └── app.js          # Compiled from src/client/app.ts (git-ignored)
+├── package.json
+├── tsconfig.json
+├── tsconfig.client.json
 └── README.md
 ```
 

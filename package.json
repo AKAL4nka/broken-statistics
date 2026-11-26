@@ -1,0 +1,35 @@
+{
+  "name": "broken-statistics",
+  "version": "1.0.0",
+  "description": "A small local web app for logging dice rolls during a game and seeing, in real time, how far your actual rolls deviate from what probability says *should* happen.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsx --test \"src/**/*.test.ts\"",
+    "dev": "tsx watch src/server.ts",
+    "build:client": "tsc --project tsconfig.client.json",
+    "typecheck": "tsc --noEmit && tsc --project tsconfig.client.json --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AKAL4nka/broken-statistics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AKAL4nka/broken-statistics/issues"
+  },
+  "type": "module",
+  "homepage": "https://github.com/AKAL4nka/broken-statistics#readme",
+  "dependencies": {
+    "better-sqlite3": "^13.2.0",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.11",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
